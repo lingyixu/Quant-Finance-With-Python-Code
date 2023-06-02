@@ -1,0 +1,1 @@
+df = pd.read_csv('AAPL.csv', index_col='Date')

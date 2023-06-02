@@ -1,0 +1,1 @@
+dfs = pd.read_html('https://en.wikipedia.org/wiki/Minnesota')
