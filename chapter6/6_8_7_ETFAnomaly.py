@@ -1,11 +1,11 @@
-from pandas_datareader import data
+import yfinance
 import statsmodels.api as sm
 from scipy.stats import norm
 import seaborn as sns
 import matplotlib.pyplot as plt
 plt.style.use('grayscale')
 
-df = data.get_data_yahoo(['XLK'], start='2020-01-01', end='2021-02-28')['Adj Close']
+df = yfinance.download(['XLK'], start='2020-01-01', end='2021-02-28')['Adj Close']
 df = df.pct_change().dropna()
 
 # histogram & density plot
