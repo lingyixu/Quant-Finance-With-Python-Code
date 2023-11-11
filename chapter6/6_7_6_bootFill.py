@@ -1,4 +1,5 @@
 import yfinance
+import pandas as pd
 import random
 
 df_price = yfinance.download(['SPY', 'AAPL', 'GOOG'], start='2020-03-01', end='2021-02-28')['Adj Close']
