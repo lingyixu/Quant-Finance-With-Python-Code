@@ -1,7 +1,8 @@
-from pandas_datareader import data
+import yfinance
+import pandas as pd
 import statsmodels.api as sm
 
-df = data.get_data_yahoo(['XLK', 'SPY'], start='2016-01-01', end='2021-02-28')['Adj Close']
+df = yfinance.download(['XLK', 'SPY'], start='2016-01-01', end='2021-02-28')['Adj Close']
 df = df.pct_change().dropna()
 df_missing = df['2021-01-01':'2021-01-31']
 
