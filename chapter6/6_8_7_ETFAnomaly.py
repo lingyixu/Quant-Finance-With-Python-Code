@@ -1,4 +1,5 @@
 import yfinance
+import numpy as np
 import statsmodels.api as sm
 from scipy.stats import norm
 import seaborn as sns
@@ -9,10 +10,10 @@ df = yfinance.download(['XLK'], start='2020-01-01', end='2021-02-28')['Adj Close
 df = df.pct_change().dropna()
 
 # histogram & density plot
-sns.displot(df['XLK'], kde=True, bins=20)
+sns.displot(df, kde=True, bins=20)
 
 # QQ plot
-sm.qqplot(df['XLK'], line ='q')
+sm.qqplot(df, line ='q')
 
 # self-defined QQ plot function
 def make_qqplot(df, ticker):
